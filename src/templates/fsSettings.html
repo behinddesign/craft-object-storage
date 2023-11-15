@@ -1,0 +1,89 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.autosuggestField({
+    label: "Server API endpoint"|t('behinddesign-object-storage'),
+    id: 'endpoint',
+    name: 'endpoint',
+    suggestEnvVars: true,
+    value: fs.endpoint|default('$OBJECT_STORAGE_SERVER'),
+    errors: fs.getErrors('endpoint'),
+    placeholder: '$OBJECT_STORAGE_SERVER'|t('behinddesign-object-storage'),
+}) }}
+
+{{ forms.selectizeField({
+    label: 'Server API Endpoint Type'|t('app'),
+    instructions: 'The type of endpoint to use.'|t('app'),
+    id: 'endpointType',
+    name: 'endpointType',
+    options: {'subdomain': 'Subdomain Style', 'path': 'Path Style'},
+    value: fs.endpointType|default('$OBJECT_STORAGE_ENDPOINT_TYPE'),
+    includeEnvVars: true,
+    allowedEnvValues: null,
+    errors: fs.getErrors('endpointType')
+}) }}
+
+{{ forms.selectizeField({
+    label: 'Visibility for new files'|t('app'),
+    instructions: 'Visibility set on S3 when files are uploaded. Can be public or private. Public allows direct access to the file on S3 without auth.'|t('app'),
+    id: 'visibility',
+    name: 'visibility',
+    value: fs.visibility|default('private'),
+    includeEnvVars: true,
+    allowedEnvValues: true,
+    errors: fs.getErrors('visibility')
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Region"|t('behinddesign-object-storage'),
+    instructions: 'Region to use'|t('behinddesign-object-storage'),
+    id: 'region',
+    name: 'region',
+    suggestEnvVars: true,
+    value: fs.region|default('$OBJECT_STORAGE_REGION'),
+    errors: fs.getErrors('region'),
+    placeholder: '$OBJECT_STORAGE_REGION'|t('behinddesign-object-storage'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Access Key ID (your App name)"|t('behinddesign-object-storage'),
+    id: 'keyId',
+    name: 'keyId',
+    suggestEnvVars: true,
+    value: fs.keyId|default('$OBJECT_STORAGE_KEY'),
+    errors: fs.getErrors('keyId'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Secret Access Key"|t('behinddesign-object-storage'),
+    id: 'secret',
+    name: 'secret',
+    suggestEnvVars: true,
+    value: fs.secret|default('$OBJECT_STORAGE_SECRET'),
+    errors: fs.getErrors('secret'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Bucket (your App name)"|t('behinddesign-object-storage'),
+    name: 'bucket',
+    suggestEnvVars: true,
+    value: fs.bucket|default('$OBJECT_STORAGE_BUCKET'),
+    errors: fs.getErrors('bucket'),
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Subfolder"|t('behinddesign-object-storage'),
+    instructions: "If you want to use a bucket’s subfolder as a Volume, specify the path to use here."|t('behinddesign-object-storage'),
+    name: 'subfolder',
+    suggestEnvVars: true,
+    value: fs.subfolder,
+    errors: fs.getErrors('subfolder'),
+    placeholder: "path/to/subfolder"|t('behinddesign-object-storage')
+}) }}
+
+{{ forms.autosuggestField({
+    label: "Expires"|t('behinddesign-object-storage'),
+    instructions: "Cache expiration period."|t('behinddesign-object-storage'),
+    name: 'expires',
+    value: fs.expires,
+    errors: fs.getErrors('expires'),
+}) }}
