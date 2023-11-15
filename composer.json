@@ -13,9 +13,15 @@
   "authors": [
     {
       "name": "behinddesign",
-      "homepage": "https://www.behinddesign.co.uk/"
+      "homepage": "https://www.behinddesign.co.uk"
     }
   ],
+  "support": {
+      "issues": "https://github.com/behinddesign/craft-object-storage/issues?state=open",
+      "source": "https://github.com/behinddesign/craft-object-storage",
+      "docs": "https://github.com/behinddesign/craft-object-storage/blob/master/README.md",
+      "rss": "https://github.com/behinddesign/craft-object-storage/commits/master.atom"
+  },
   "require": {
     "php": "^8.0.2",
     "craftcms/cms": "^4.0.0",
