@@ -27,9 +27,10 @@
     instructions: 'Visibility set on S3 when files are uploaded. Can be public or private. Public allows direct access to the file on S3 without auth.'|t('app'),
     id: 'visibility',
     name: 'visibility',
-    value: fs.visibility|default('private'),
+    options: {'private': 'Private', 'public': 'Public'},
+    value: fs.visibility|default('$OBJECT_STORAGE_VISIBILITY'),
     includeEnvVars: true,
-    allowedEnvValues: true,
+    allowedEnvValues: null,
     errors: fs.getErrors('visibility')
 }) }}
 
@@ -45,11 +46,11 @@
 }) }}
 
 {{ forms.autosuggestField({
-    label: "Access Key ID (your App name)"|t('behinddesign-object-storage'),
+    label: "Access Key ID"|t('behinddesign-object-storage'),
     id: 'keyId',
     name: 'keyId',
     suggestEnvVars: true,
-    value: fs.keyId|default('$OBJECT_STORAGE_KEY'),
+    value: fs.keyId|default('$OBJECT_STORAGE_ACCESS_KEY'),
     errors: fs.getErrors('keyId'),
 }) }}
 
@@ -58,7 +59,7 @@
     id: 'secret',
     name: 'secret',
     suggestEnvVars: true,
-    value: fs.secret|default('$OBJECT_STORAGE_SECRET'),
+    value: fs.secret|default('$OBJECT_STORAGE_SECRET_KEY'),
     errors: fs.getErrors('secret'),
 }) }}
 

@@ -71,7 +71,7 @@ class Fs extends FlysystemFs
     public string $endpointType = '';
 
     /**
-     * @var bool Set ACL for Uploads
+     * @var string Set ACL for Uploads
      */
     public string $visibility = 'private';
 
@@ -195,7 +195,7 @@ class Fs extends FlysystemFs
      */
     protected function visibility(): string
     {
-        return App::parseEnv($this->makeUploadsPublic) ? Visibility::PUBLIC : Visibility::PRIVATE;
+        return App::parseEnv($this->visibility) === 'public' ? Visibility::PUBLIC : Visibility::PRIVATE;
     }
 
     protected function invalidateCdnPath(string $path): bool
