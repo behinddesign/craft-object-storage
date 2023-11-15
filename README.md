@@ -35,7 +35,7 @@ OBJECT_STORAGE_SERVER="Your S3 Host"
 
 ### Install the plugin
 ```
-php craft plugin/install behinddesign-cract-object-storage
+php craft plugin/install behinddesign-craft-object-storage
 ```
 
 Or browse to  CP > Settings > Plugins to enable the plugin.
