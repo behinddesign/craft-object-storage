@@ -64,7 +64,7 @@
 }) }}
 
 {{ forms.autosuggestField({
-    label: "Bucket (your App name)"|t('behinddesign-object-storage'),
+    label: "Bucket"|t('behinddesign-object-storage'),
     name: 'bucket',
     suggestEnvVars: true,
     value: fs.bucket|default('$OBJECT_STORAGE_BUCKET'),
