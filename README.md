@@ -46,5 +46,6 @@ Within Settings -> Filesystems -> Add / Edit a filesystem
 The dropdown for 'Filesystem Type' will now contain 'Generic S3' as an option.
 
 ## Thanks!
-[fortrabbit](https://github.com/fortrabbit/craft-object-storage) for providing the base
-code for this repository. Changes based off of their code made setting this up very easy.
+[fortrabbit](https://github.com/fortrabbit/craft-object-storage) The base setup for the S3 integration made significantly
+easier with their plugin. Added extra features which allow for a generic integration such as path style endpoints, the ability
+to select visibility. This means integration with [minio](https://min.io) is much easier.
