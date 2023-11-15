@@ -22,14 +22,14 @@ composer require behinddesign/craft-object-storage
 
 ### Update your local .env file (Optional, set these during configuration of Filesystem)
 ```
-OBJECT_STORAGE_BUCKET="(YOUR_APP_NAME)"
-OBJECT_STORAGE_HOST="(YOUR_APP_NAME_IF_USING_SUBDOMAIN).my.s3.host.com"
+OBJECT_STORAGE_BUCKET="my-bucket"
+OBJECT_STORAGE_HOST="my-bucket.my.s3.host.com"
 OBJECT_STORAGE_HOST_TYPE="subdomain"
 OBJECT_STORAGE_VISIBILITY="private"
 OBJECT_STORAGE_MAKE_UPLOADS_PUBLIC="true"
 OBJECT_STORAGE_REGION="eu-west-1"
-OBJECT_STORAGE_ACCESS_KEY="(YOUR_APP_NAME)"
-OBJECT_STORAGE_SECRET_KEY="(OBJECT_STORAGE_SECRET)"
+OBJECT_STORAGE_ACCESS_KEY="accesskey"
+OBJECT_STORAGE_SECRET_KEY="secretkey"
 OBJECT_STORAGE_SERVER="Your S3 Host"
 ```
 
