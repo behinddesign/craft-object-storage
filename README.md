@@ -9,7 +9,7 @@ This plugin provides a S3 (Object) storage integration for [Craft CMS](https://c
 
 ## Requirements
 - PHP 8.0
-- Craft 4.0
+- Craft 5.0
 
 ## Installation
 To install the plugin.

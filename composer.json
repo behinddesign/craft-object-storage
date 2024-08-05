@@ -1,6 +1,6 @@
 {
   "name": "behinddesign/craft-object-storage",
-  "description": "A Craft 4 plugin that integrates with most S3 compatible Object Storage. Includes custom host / path or subdomain connection types",
+  "description": "A Craft 5 plugin that integrates with most S3 compatible Object Storage. Includes custom host / path or subdomain connection types",
   "type": "craft-plugin",
   "keywords": [
     "craftcms",
@@ -17,17 +17,17 @@
     }
   ],
   "support": {
-      "issues": "https://github.com/behinddesign/craft-object-storage/issues?state=open",
-      "source": "https://github.com/behinddesign/craft-object-storage",
-      "docs": "https://github.com/behinddesign/craft-object-storage/blob/master/README.md",
-      "rss": "https://github.com/behinddesign/craft-object-storage/commits/master.atom"
+    "issues": "https://github.com/behinddesign/craft-object-storage/issues?state=open",
+    "source": "https://github.com/behinddesign/craft-object-storage",
+    "docs": "https://github.com/behinddesign/craft-object-storage/blob/master/README.md",
+    "rss": "https://github.com/behinddesign/craft-object-storage/commits/master.atom"
   },
   "require": {
     "php": "^8.0.2",
-    "craftcms/cms": "^4.0.0",
-    "craftcms/flysystem": "^1.0.0",
+    "craftcms/cms": "^5.0.0",
+    "craftcms/flysystem": "^2.0.0",
     "league/flysystem-aws-s3-v3": "^3.0.0",
-    "symfony/console": "^5.1|^6.0"
+    "symfony/console": "^6.0|^7.0"
   },
   "require-dev": {
     "craftcms/phpstan": "dev-main",
