@@ -170,9 +170,10 @@ class Fs extends FlysystemFs
     {
         $endpoint = App::parseEnv($this->endpoint);
 
-        if (!str_contains($endpoint, 'https')) {
-            $endpoint = 'https://' .  $endpoint;
-        }
+        // defaults to https if no protocol is set
+        // allows for explicit http (not recommended outside local development)
+        $endpoint = str_starts_with( $endpoint, '//'   ) ? 'https:'   . $endpoint : $endpoint;
+        $endpoint = str_starts_with( $endpoint, 'http' ) ? $endpoint : 'https://' . $endpoint;
 
         return [
             'version'      => 'latest',
