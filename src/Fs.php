@@ -168,12 +168,12 @@ class Fs extends FlysystemFs
      */
     protected function getConfigArray(): array
     {
-        $endpoint = App::parseEnv($this->endpoint);
+        $endpoint = ltrim( App::parseEnv($this->endpoint), '/');
 
         // defaults to https if no protocol is set
-        // allows for explicit http (not recommended outside local development)
-        $endpoint = str_starts_with( $endpoint, '//'   ) ? 'https:'   . $endpoint : $endpoint;
-        $endpoint = str_starts_with( $endpoint, 'http' ) ? $endpoint : 'https://' . $endpoint;
+        if (!str_starts_with($endpoint, 'http')) {
+            $endpoint = 'https://' .  $endpoint;
+        }
 
         return [
             'version'      => 'latest',
