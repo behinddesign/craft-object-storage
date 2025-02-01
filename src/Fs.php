@@ -178,6 +178,8 @@ class Fs extends FlysystemFs
             'version'      => 'latest',
             'region'       => App::parseEnv($this->region),
             'endpoint'     => $endpoint,
+            'request_checksum_calculation' => 'when_required',
+            'response_checksum_validation' => 'when_required',
             'use_path_style_endpoint' => App::parseEnv($this->endpointType) === 'path',
             'http_handler' => new GuzzleHandler(Craft::createGuzzleClient()),
             'credentials'  => [
